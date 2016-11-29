@@ -1,0 +1,83 @@
+/*微信表情*/
+.wx_emotion_box{
+	border-bottom: 1px solid #e3e3e5;	
+	background-color:#f3f3f3;
+	visibility:hidden;
+	height:0;
+}
+.wx_emotion_box.hide{
+	visibility:hidden;
+	height:0;
+}
+.wx_emotion_box.show{
+	visibility:visible;
+	height:auto;
+}
+.wx_emotion_box .swiper-container{
+	position:relative;
+	padding:0 0 15px 0;
+	overflow:visible;
+} 
+.wx_emotion_box .swiper-container:before{
+	content:"";
+	position:absolute;
+	left:26px;
+	top:-14px;
+	z-index:111;
+	border:7px solid transparent;
+	border-bottom-color:#f3f3f3;	
+}
+.wx_emotion_box .swiper-container:after{
+	content:"";
+	position:absolute;
+	left:25px;
+	top:-16px;
+	z-index:110;
+	border:8px solid transparent;
+	border-bottom-color:#e7e6e4;
+}
+.wx_emotion_box .swiper-container-horizontal>.swiper-pagination-bullets,
+.wx_emotion_box .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:5px;
+}
+.wx_emotion_box .swiper-pagination-bullet-active{
+	background:#8c8c8c;
+}
+.wx_emotion_list{
+	background:#f3f3f3;
+	padding:10px;
+	overflow:hidden;
+	box-sizing:border-box;
+}
+.wx_emotion_list li{
+	list-style-type:none;
+	float:left;
+	padding:3px;
+	text-align:center;
+	box-sizing:border-box;
+	margin-bottom:5px;
+}
+.wx_emotion_item{
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	display: inline-block;
+	background: transparent url("../img/icon_wx_emotion.png") no-repeat 0 0;
+	-webkit-background-size: 2520px auto;
+	background-size: 2520px auto;
+	cursor:pointer;
+}
+.wx_emotion_item.del{
+	background: transparent url("../img/icon_wx_emotion_tool.png") no-repeat 0 0;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    display: inline-block;
+    background-position: 2px -59px;
+    -webkit-background-size: 28px auto;
+    background-size: 26px auto;
+}
+.list_emotion_img{
+	display:inline-block;
+	vertical-align:middle;
+}

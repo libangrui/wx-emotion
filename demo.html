@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no' />
+	<meta name='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<title></title>
+	
+	<link type="text/css" rel="stylesheet" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" href="css/page_mp_article_improve_combo2eb52b.css" />
+	<link type="text/css" rel="stylesheet" href="css/swiper.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/main.css" />
+	
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<div id="j_cmt_box" class="discuss_container editing access" style="">
+	<div class="discuss_container_inner">
+		<h2 class="rich_media_title">呵呵</h2>
+		<span id="log"></span>
+		<div class="frm_textarea_box_wrp">
+			<span class="frm_textarea_box">
+				<textarea id="j_cmt_input" class="frm_textarea" placeholder="留言将由企业号筛选后显示，对所有人可见。" style="-webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px);"></textarea>
+				<div class="emotion_tool">
+					<span id="j_emotion_switch" class="pic_emotion_switch_wrp">
+						<img class="pic_default" src="img/icon_emotion_switch.2x2f1273.png" alt="">
+						<img class="pic_active" src="img/icon_emotion_switch_active.2x2f1273.png" alt="">
+					</span>
+					<div class="wx_emotion_box" id="j_emotion_panel" style="">
+					</div>
+				</div>
+			</span>
+		</div>
+		<div class="discuss_btn_wrp">
+			<a id="j_cmt_submit" class="btn btn_primary btn_discuss btn_disabled" href="javascript:;">提交</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	wxEmotion({
+		el:document.getElementById("j_emotion_panel"),
+		clickFn:function(obj){
+			console.log(obj.dataset.title);
+			if(obj.dataset.title){
+				var textarea = document.getElementById('j_cmt_input');
+				console.log(textarea.value);
+				textarea.value += ("/" + obj.dataset.title);			
+			}
+		}
+	});
+	
+	//表情开关事件
+	$("#j_emotion_switch").on("click", function(){
+		if( $("#j_emotion_panel").hasClass("show") ){
+			$("#j_emotion_panel").removeClass("show");
+		}else{
+			$("#j_emotion_panel").addClass("show");
+		}
+	});
+</script>
+</body>
+</html>
